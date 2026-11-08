@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/yt--dlp-latest-red?logo=youtube" alt="yt-dlp">
   <img src="https://img.shields.io/badge/CustomTkinter-5.x-blueviolet" alt="CustomTkinter">
@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey" alt="Multi-platform">
 </p>
 
-<h1 align="center">OmniGet – Universal Video Downloader</h1>
+<h1 align="center">OmniGet â€“ Universal Video Downloader</h1>
 
 <p align="center">
   A clean, modern desktop GUI for downloading video and audio from YouTube, Vimeo,
@@ -16,26 +16,26 @@
 
 ---
 
-## ✨ Features
+## âœ¨ Features
 
 | Feature | Detail |
 |---|---|
-| **Universal Downloads** | Supports any site that yt-dlp supports (YouTube, Vimeo, Twitter/X, Twitch, SoundCloud, …) |
+| **Universal Downloads** | Supports any site that yt-dlp supports (YouTube, Vimeo, Twitter/X, Twitch, SoundCloud, â€¦) |
 | **Multiple Formats** | Best Video + Audio (MP4), Audio Only (MP3 @ 192 kbps), Video Only (MP4) |
 | **Real-time Progress** | Live progress bar showing percentage, download speed, and ETA |
-| **Non-blocking UI** | Download runs in a background thread – the window stays responsive |
+| **Non-blocking UI** | Download runs in a background thread â€“ the window stays responsive |
 | **Dark / Light / System Theme** | Toggle appearance mode from the footer |
 | **Auto Save** | Files are saved to your OS `~/Downloads` folder automatically |
 
 ---
 
-## 📸 Screenshot
+## ðŸ“¸ Screenshot
 
 > _Add a screenshot here once the app is running (`docs/screenshot.png`)._
 
 ---
 
-## 🔧 Requirements
+## ðŸ”§ Requirements
 
 ### Runtime dependencies
 
@@ -58,16 +58,16 @@ FFmpeg **must** be on your system `PATH` for stream merging and MP3 conversion t
 
 ---
 
-## 🚀 Getting Started
+## ðŸš€ Getting Started
 
-### 1 – Clone the repository
+### 1 â€“ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/OmniGet.git
+git clone https://github.com/ykisgoren/OmniGet.git
 cd OmniGet
 ```
 
-### 2 – Create and activate a virtual environment
+### 2 â€“ Create and activate a virtual environment
 
 ```bash
 # Windows
@@ -79,13 +79,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3 – Install Python dependencies
+### 3 â€“ Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4 – Run the app
+### 4 â€“ Run the app
 
 ```bash
 python main.py
@@ -93,15 +93,15 @@ python main.py
 
 ---
 
-## 📦 Building a Standalone Executable (PyInstaller)
+## ðŸ“¦ Building a Standalone Executable (PyInstaller)
 
 You can ship OmniGet as a single `.exe` / binary with no Python installation required:
 
 ```bash
-# Windows – produces dist\OmniGet.exe
+# Windows â€“ produces dist\OmniGet.exe
 pyinstaller --onefile --windowed --name OmniGet main.py
 
-# macOS – produces dist/OmniGet.app
+# macOS â€“ produces dist/OmniGet.app
 pyinstaller --onefile --windowed --name OmniGet main.py
 ```
 
@@ -110,20 +110,20 @@ pyinstaller --onefile --windowed --name OmniGet main.py
 
 ---
 
-## 🗂 Project Structure
+## ðŸ—‚ Project Structure
 
 ```
 OmniGet/
-├── main.py          # CustomTkinter GUI – entry point
-├── downloader.py    # yt-dlp download engine (UI-independent)
-├── requirements.txt # Python package dependencies
-├── .gitignore       # Standard Python gitignore
-└── README.md        # This file
+â”œâ”€â”€ main.py          # CustomTkinter GUI â€“ entry point
+â”œâ”€â”€ downloader.py    # yt-dlp download engine (UI-independent)
+â”œâ”€â”€ requirements.txt # Python package dependencies
+â”œâ”€â”€ .gitignore       # Standard Python gitignore
+â””â”€â”€ README.md        # This file
 ```
 
 ---
 
-## 🤝 Contributing
+## ðŸ¤ Contributing
 
 Contributions, bug reports, and feature requests are welcome!  
 Please open an [issue](../../issues) or submit a [pull request](../../pulls).
@@ -136,14 +136,15 @@ Please open an [issue](../../issues) or submit a [pull request](../../pulls).
 
 ---
 
-## 📄 License
+## ðŸ“„ License
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
 
 ---
 
-## 🙏 Acknowledgements
+## ðŸ™ Acknowledgements
 
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) – the powerful download engine behind OmniGet
-- [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) – modern Tkinter widgets
-- [FFmpeg](https://ffmpeg.org/) – the multimedia Swiss Army knife
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) â€“ the powerful download engine behind OmniGet
+- [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) â€“ modern Tkinter widgets
+- [FFmpeg](https://ffmpeg.org/) â€“ the multimedia Swiss Army knife
+

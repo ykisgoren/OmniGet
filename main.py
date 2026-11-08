@@ -1,7 +1,7 @@
-"""
+﻿"""
 main.py
 =======
-OmniGet – Universal Video Downloader
+OmniGet â€“ Universal Video Downloader
 -------------------------------------
 Entry point and GUI layer built with CustomTkinter.
 
@@ -21,7 +21,7 @@ import customtkinter as ctk
 # Self-bootstrapping dependency check (runs before the main UI).
 from setup_checker import ensure_dependencies
 
-# Download engine – completely UI-independent.
+# Download engine â€“ completely UI-independent.
 from downloader import (
     start_download,
     FORMAT_BEST,
@@ -31,7 +31,7 @@ from downloader import (
 
 
 # ---------------------------------------------------------------------------
-# Global appearance – set before any widget is created
+# Global appearance â€“ set before any widget is created
 # ---------------------------------------------------------------------------
 ctk.set_appearance_mode("System")      # Tracks OS dark / light preference
 ctk.set_default_color_theme("blue")
@@ -45,18 +45,18 @@ class OmniGetApp(ctk.CTk):
     """
     Root window of OmniGet.
 
-    Layout (top → bottom, all inside a single scrollable column):
-        ┌─────────────────────────────┐
-        │  Header (title + subtitle)  │
-        ├─────────────────────────────┤
-        │  URL card                   │
-        ├─────────────────────────────┤
-        │  Format + Download card     │
-        ├─────────────────────────────┤
-        │  Progress card              │
-        ├─────────────────────────────┤
-        │  Footer                     │
-        └─────────────────────────────┘
+    Layout (top â†’ bottom, all inside a single scrollable column):
+        â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+        â”‚  Header (title + subtitle)  â”‚
+        â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+        â”‚  URL card                   â”‚
+        â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+        â”‚  Format + Download card     â”‚
+        â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+        â”‚  Progress card              â”‚
+        â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+        â”‚  Footer                     â”‚
+        â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
     """
 
     WIN_WIDTH   = 620
@@ -70,8 +70,8 @@ class OmniGetApp(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        # ── Window chrome ────────────────────────────────────────────────────
-        self.title("OmniGet – Universal Video Downloader")
+        # â”€â”€ Window chrome â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        self.title("OmniGet â€“ Universal Video Downloader")
         self.geometry(self._center_geometry(self.WIN_WIDTH, self.WIN_HEIGHT))
         self.minsize(self.WIN_WIDTH, self.WIN_MIN_H)
         self.resizable(True, True)      # Allow resize so nothing gets clipped
@@ -81,7 +81,7 @@ class OmniGetApp(ctk.CTk):
         # Row 5 (progress card) absorbs any extra vertical space
         self.grid_rowconfigure(4, weight=1)
 
-        # ── Build all sections ───────────────────────────────────────────────
+        # â”€â”€ Build all sections â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         self._build_header()       # row 0
         self._build_url_card()     # row 1
         self._build_action_card()  # row 2  (format dropdown + download btn)
@@ -105,7 +105,7 @@ class OmniGetApp(ctk.CTk):
 
         ctk.CTkLabel(
             hf,
-            text="Universal Video Downloader  •  Powered by yt-dlp",
+            text="Universal Video Downloader  â€¢  Powered by yt-dlp",
             font=ctk.CTkFont(size=12),
             text_color="gray",
         ).grid(row=1, column=0, sticky="w")
@@ -123,7 +123,7 @@ class OmniGetApp(ctk.CTk):
 
         self.url_entry = ctk.CTkEntry(
             card,
-            placeholder_text="Paste a YouTube, Vimeo, or any supported URL here…",
+            placeholder_text="Paste a YouTube, Vimeo, or any supported URL hereâ€¦",
             height=38,
             font=ctk.CTkFont(size=13),
         )
@@ -143,13 +143,13 @@ class OmniGetApp(ctk.CTk):
         card.grid_columnconfigure(1, weight=0)   # dropdown  (fixed width)
         card.grid_columnconfigure(2, weight=0)   # button    (fixed width)
 
-        # ── Format label ──────────────────────────────────────────────────
+        # â”€â”€ Format label â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         ctk.CTkLabel(
             card, text="Format",
             font=ctk.CTkFont(size=12, weight="bold"), anchor="w",
         ).grid(row=0, column=0, sticky="w", padx=(self.CARD_PAD, 6), pady=12)
 
-        # ── Dropdown ──────────────────────────────────────────────────────
+        # â”€â”€ Dropdown â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         self.format_var = ctk.StringVar(value=self.FORMAT_OPTIONS[0])
         self.format_menu = ctk.CTkOptionMenu(
             card,
@@ -161,10 +161,10 @@ class OmniGetApp(ctk.CTk):
         )
         self.format_menu.grid(row=0, column=1, padx=6, pady=12)
 
-        # ── Download button ───────────────────────────────────────────────
+        # â”€â”€ Download button â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         self.download_btn = ctk.CTkButton(
             card,
-            text="⬇  Download",
+            text="â¬‡  Download",
             width=148,
             height=36,
             font=ctk.CTkFont(size=13, weight="bold"),
@@ -196,7 +196,7 @@ class OmniGetApp(ctk.CTk):
 
         self.status_label = ctk.CTkLabel(
             card,
-            text="Ready — paste a URL and press Download.",
+            text="Ready â€” paste a URL and press Download.",
             font=ctk.CTkFont(size=12),
             text_color="gray",
             anchor="w",
@@ -216,12 +216,12 @@ class OmniGetApp(ctk.CTk):
 
         ctk.CTkLabel(
             ff,
-            text="Open-source  •  github.com/your-username/OmniGet",
+            text="Open-source  â€¢  github.com/ykisgoren/OmniGet",
             font=ctk.CTkFont(size=11),
             text_color="gray",
         ).grid(row=0, column=0, sticky="w")
 
-        # ── Appearance toggle ─────────────────────────────────────────────
+        # â”€â”€ Appearance toggle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         # Label + dropdown side by side so the purpose is obvious
         ctk.CTkLabel(
             ff, text="Theme:",
@@ -252,14 +252,14 @@ class OmniGetApp(ctk.CTk):
         format_choice = self.format_var.get()
 
         if not url:
-            self._update_status("⚠  Please paste a URL first.", is_error=True)
+            self._update_status("âš   Please paste a URL first.", is_error=True)
             return
 
         # Reset UI
-        self.download_btn.configure(state="disabled", text="Downloading…")
+        self.download_btn.configure(state="disabled", text="Downloadingâ€¦")
         self.format_menu.configure(state="disabled")
         self.progress_bar.set(0)
-        self._update_status("Starting download…")
+        self._update_status("Starting downloadâ€¦")
 
         threading.Thread(
             target=start_download,
@@ -303,7 +303,7 @@ class OmniGetApp(ctk.CTk):
         self.status_label.configure(text=text, text_color=color)
 
     def _re_enable_controls(self):
-        self.download_btn.configure(state="normal", text="⬇  Download")
+        self.download_btn.configure(state="normal", text="â¬‡  Download")
         self.format_menu.configure(state="normal")
 
     @staticmethod
@@ -322,11 +322,12 @@ class OmniGetApp(ctk.CTk):
 
 if __name__ == "__main__":
     # Build a minimal root first so the setup splash has a Tk parent.
-    # We use CTk() directly – it won't be shown until mainloop() is called.
+    # We use CTk() directly â€“ it won't be shown until mainloop() is called.
     app = OmniGetApp()
 
     # Run dependency check with the real window as parent (modal splash).
     ensure_dependencies(master_root=app)
 
-    # All good – show the main window.
+    # All good â€“ show the main window.
     app.mainloop()
+

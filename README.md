@@ -31,7 +31,7 @@
 
 ## Screenshot
 
-> _Add a screenshot here once the app is running (`docs/screenshot.png`)._
+> _Add a screenshot here once the app is running (`<img width="622" height="472" alt="Ekran görüntüsü 2026-11-08 184705" src="https://github.com/user-attachments/assets/90f873a8-1b4a-4adc-bd3d-e63b5747c9a2" />`)._
 
 ---
 

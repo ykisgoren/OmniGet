@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/yt--dlp-latest-red?logo=youtube" alt="yt-dlp">
   <img src="https://img.shields.io/badge/CustomTkinter-5.x-blueviolet" alt="CustomTkinter">
@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey" alt="Multi-platform">
 </p>
 
-<h1 align="center">OmniGet â€“ Universal Video Downloader</h1>
+<h1 align="center">OmniGet - Universal Video Downloader</h1>
 
 <p align="center">
   A clean, modern desktop GUI for downloading video and audio from YouTube, Vimeo,
@@ -16,26 +16,26 @@
 
 ---
 
-## âœ¨ Features
+## Features
 
 | Feature | Detail |
 |---|---|
-| **Universal Downloads** | Supports any site that yt-dlp supports (YouTube, Vimeo, Twitter/X, Twitch, SoundCloud, â€¦) |
+| **Universal Downloads** | Supports any site that yt-dlp supports (YouTube, Vimeo, Twitter/X, Twitch, SoundCloud, ...) |
 | **Multiple Formats** | Best Video + Audio (MP4), Audio Only (MP3 @ 192 kbps), Video Only (MP4) |
 | **Real-time Progress** | Live progress bar showing percentage, download speed, and ETA |
-| **Non-blocking UI** | Download runs in a background thread â€“ the window stays responsive |
+| **Non-blocking UI** | Download runs in a background thread - the window stays responsive |
 | **Dark / Light / System Theme** | Toggle appearance mode from the footer |
 | **Auto Save** | Files are saved to your OS `~/Downloads` folder automatically |
 
 ---
 
-## ðŸ“¸ Screenshot
+## Screenshot
 
 > _Add a screenshot here once the app is running (`docs/screenshot.png`)._
 
 ---
 
-## ðŸ”§ Requirements
+## Requirements
 
 ### Runtime dependencies
 
@@ -50,6 +50,8 @@
 
 FFmpeg **must** be on your system `PATH` for stream merging and MP3 conversion to work.
 
+> **Note:** If you are using the pre-built `OmniGet.exe`, FFmpeg is installed automatically on first launch.
+
 | OS | Install command |
 |---|---|
 | **Windows** | `winget install Gyan.FFmpeg` |
@@ -58,16 +60,16 @@ FFmpeg **must** be on your system `PATH` for stream merging and MP3 conversion t
 
 ---
 
-## ðŸš€ Getting Started
+## Getting Started
 
-### 1 â€“ Clone the repository
+### 1 - Clone the repository
 
 ```bash
 git clone https://github.com/ykisgoren/OmniGet.git
 cd OmniGet
 ```
 
-### 2 â€“ Create and activate a virtual environment
+### 2 - Create and activate a virtual environment
 
 ```bash
 # Windows
@@ -79,13 +81,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3 â€“ Install Python dependencies
+### 3 - Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4 â€“ Run the app
+### 4 - Run the app
 
 ```bash
 python main.py
@@ -93,39 +95,36 @@ python main.py
 
 ---
 
-## ðŸ“¦ Building a Standalone Executable (PyInstaller)
+## Building a Standalone Executable (PyInstaller)
 
 You can ship OmniGet as a single `.exe` / binary with no Python installation required:
 
 ```bash
-# Windows â€“ produces dist\OmniGet.exe
-pyinstaller --onefile --windowed --name OmniGet main.py
-
-# macOS â€“ produces dist/OmniGet.app
-pyinstaller --onefile --windowed --name OmniGet main.py
+# Windows - produces dist\OmniGet.exe
+pyinstaller --onefile --windowed --name OmniGet --collect-data customtkinter --collect-data yt_dlp main.py
 ```
 
-> [!NOTE]
-> PyInstaller does **not** bundle FFmpeg. Users of the standalone build must still install FFmpeg separately.
+> **Note:** PyInstaller does **not** bundle FFmpeg. The app installs it automatically on first launch via PowerShell.
 
 ---
 
-## ðŸ—‚ Project Structure
+## Project Structure
 
 ```
 OmniGet/
-â”œâ”€â”€ main.py          # CustomTkinter GUI â€“ entry point
-â”œâ”€â”€ downloader.py    # yt-dlp download engine (UI-independent)
-â”œâ”€â”€ requirements.txt # Python package dependencies
-â”œâ”€â”€ .gitignore       # Standard Python gitignore
-â””â”€â”€ README.md        # This file
+|-- main.py           # CustomTkinter GUI - entry point
+|-- downloader.py     # yt-dlp download engine (UI-independent)
+|-- setup_checker.py  # First-run FFmpeg auto-installer
+|-- requirements.txt  # Python package dependencies
+|-- .gitignore        # Standard Python gitignore
+|-- README.md         # This file
 ```
 
 ---
 
-## ðŸ¤ Contributing
+## Contributing
 
-Contributions, bug reports, and feature requests are welcome!  
+Contributions, bug reports, and feature requests are welcome!
 Please open an [issue](../../issues) or submit a [pull request](../../pulls).
 
 1. Fork the repo.
@@ -136,15 +135,14 @@ Please open an [issue](../../issues) or submit a [pull request](../../pulls).
 
 ---
 
-## ðŸ“„ License
+## License
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
 
 ---
 
-## ðŸ™ Acknowledgements
+## Acknowledgements
 
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) â€“ the powerful download engine behind OmniGet
-- [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) â€“ modern Tkinter widgets
-- [FFmpeg](https://ffmpeg.org/) â€“ the multimedia Swiss Army knife
-
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - the powerful download engine behind OmniGet
+- [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) - modern Tkinter widgets
+- [FFmpeg](https://ffmpeg.org/) - the multimedia Swiss Army knife

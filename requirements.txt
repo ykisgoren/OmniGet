@@ -1,0 +1,9 @@
+# OmniGet Python dependencies
+# Install inside a virtual environment:
+#   python -m venv venv
+#   venv\Scripts\activate      (Windows)
+#   pip install -r requirements.txt
+
+yt-dlp>=2024.1.1
+customtkinter>=5.2.2
+pyinstaller>=6.0.0
